@@ -8,7 +8,7 @@ export class StorageManager {
     public static getInstance(storageType: StorageType): StorageManager {
         if (!StorageManager.instance) {
             StorageManager.instance = new StorageManager();
-            
+
             if(storageType === StorageType.local){
                 StorageManager.instance.setStorage(new LocalStorage());
             }else if(storageType === StorageType.s3){
@@ -32,7 +32,7 @@ export class StorageManager {
 export class User {
     public id: number;
     public name: string;
-    public storageType: StorageType;
+    public storageType: StorageType; // exists 100%
 
     public constructor(id: number, name: string, storageType: StorageType) {
         this.id = id;
